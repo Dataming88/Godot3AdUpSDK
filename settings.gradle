@@ -1,0 +1,20 @@
+// This is the root directory of the Godot custom build.
+pluginManagement {
+    apply from: 'config.gradle'
+
+    plugins {
+        id 'com.android.application' version versions.androidGradlePlugin
+        id 'org.jetbrains.kotlin.android' version versions.kotlinVersion
+    }
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        gradlePluginPortal()
+        google()
+    }
+}
+
+include ':assetPacks:installTime'
+include ':gdplugin'
